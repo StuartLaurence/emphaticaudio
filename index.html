@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Emphatic Audio – Recording Studio • Austin, TX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Emphatic Audio is a recording and mixing studio in Austin, TX, specializing in rock, metal, punk, and heavy music. Comfortable vibe, pro results."
+  />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #0d0d15;
+      --accent: #f04e3e;
+      --accent-soft: #ff8a6e;
+      --text-main: #f5f5f5;
+      --text-muted: #aaaaaa;
+      --border-subtle: #2a2a3a;
+      --card-bg: #11111b;
+      --max-width: 1100px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #151525 0, #050509 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 9, 0.95),
+        rgba(5, 5, 9, 0.85)
+      );
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      box-shadow: 0 0 18px rgba(240, 78, 62, 0.7);
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    .logo-text-sub {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.14em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: center;
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+      transition: transform 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(240, 78, 62, 0.8);
+      background: radial-gradient(circle at top left, #f04e3e 0, #b2201d 45%, #3a0505 100%);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      filter: brightness(1.05);
+    }
+
+    .nav-burger {
+      display: none;
+      border: none;
+      background: none;
+      color: var(--text-main);
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      padding-top: 3.5rem;
+      padding-bottom: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--accent-soft);
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 3.1vw + 1.6rem, 3.1rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--accent-soft);
+    }
+
+    .hero-tagline {
+      color: var(--text-muted);
+      max-width: 32rem;
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      background: rgba(11, 11, 18, 0.9);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.85rem 1.8rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-secondary {
+      padding: 0.8rem 1.3rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: rgba(8, 8, 14, 0.8);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .cta-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-right {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1a1a2a 0, #090912 60%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.3rem 1.3rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-light {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #31d158;
+      box-shadow: 0 0 12px rgba(49, 209, 88, 0.9);
+    }
+
+    .hero-meters {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      font-size: 0.75rem;
+    }
+
+    .meter-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.12rem;
+      color: var(--text-muted);
+    }
+
+    .meter-bar {
+      position: relative;
+      height: 7px;
+      border-radius: 999px;
+      background: #181824;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      position: absolute;
+      inset: 0;
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--accent), #ffd36a);
+      transform: scaleX(0.78);
+    }
+
+    .meter-fill.alt {
+      background: linear-gradient(90deg, #38e3ff, #9b7bff);
+      transform: scaleX(0.66);
+    }
+
+    .meter-fill.subtle {
+      background: linear-gradient(90deg, #72ffb9, #f5ff8b);
+      transform: scaleX(0.54);
+    }
+
+    .hero-tag {
+      margin-top: 0.9rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-floater {
+      position: absolute;
+      right: -0.4rem;
+      bottom: -1.5rem;
+      padding: 0.6rem 0.9rem;
+      border-radius: 14px;
+      background: rgba(5, 5, 9, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-floater span:first-child {
+      color: var(--accent-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.68rem;
+    }
+
+    .hero-photo {
+      margin-top: 0.8rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Sections */
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-kicker {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      max-width: 36rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: linear-gradient(
+        145deg,
+        rgba(17, 17, 27, 0.96),
+        rgba(7, 7, 11, 0.96)
+      );
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.1rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-soft);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bullet-list li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0.17rem;
+      font-size: 1rem;
+      color: var(--accent-soft);
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.83rem;
+    }
+
+    .gear-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      font-size: 0.83rem;
+    }
+
+    .gear-columns h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .gear-columns li {
+      margin-bottom: 0.3rem;
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .pill-small {
+      padding: 0.1rem 0.55rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .pricing-card {
+      background: linear-gradient(
+        145deg,
+        rgba(17, 17, 27, 0.96),
+        rgba(7, 7, 11, 0.96)
+      );
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.1rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+    }
+
+    .pricing-card h3 {
+      font-size: 1.35rem;
+      margin: 0.25rem 0 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .pricing-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .pricing-card-alt {
+      border: 1px solid rgba(240, 78, 62, 0.22);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+    }
+
+    .pricing-fineprint {
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+
+    .pricing-note {
+      margin-top: 1.2rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gallery-item figcaption {
+      margin-top: 0.3rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Audio samples */
+    .audio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .audio-card {
+      background: linear-gradient(
+        145deg,
+        rgba(17, 17, 27, 0.96),
+        rgba(7, 7, 11, 0.96)
+      );
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      font-size: 0.85rem;
+    }
+
+    .audio-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .audio-band {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .audio-style {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-soft);
+      white-space: nowrap;
+    }
+
+    .audio-song {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .audio-card audio {
+      width: 100%;
+      margin-top: 0.1rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      background: radial-gradient(circle at top left, #151525, #08080f);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.3rem 1.2rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .contact-row {
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--text-muted);
+    }
+
+    .contact-value {
+      font-size: 0.96rem;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .social-pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.6rem 1.25rem 1.2rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .two-col,
+      .gear-columns,
+      .card-grid,
+      .contact-grid,
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-burger {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 2.5rem 1.1rem;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .hero-card {
+        padding: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav">
+        <div class="logo-wrap">
+          <img
+            src="images/Emphatic%20Audio%20Logo%20Black_square.png"
+            alt="Emphatic Audio logo"
+            class="logo-mark"
+          />
+          <div>
+            <div class="logo-text-main">Emphatic Audio</div>
+            <div class="logo-text-sub">Recording • Mixing • Austin, TX</div>
+          </div>
+        </div>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#about-me">About Me</a>
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#gear">Gear</a>
+          <a href="#audio">Audio</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="nav-cta">Book a Session</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="section hero" id="top">
+        <div>
+          <div class="eyebrow">Austin, Texas • Independent Studio</div>
+          <h1>
+            <span>Emphatic Audio</span><br />
+            Recording for loud, live bands.
+          </h1>
+          <p class="hero-tagline">
+            A real room, real amps, and a producer who actually plays in loud
+            bands. Emphatic Audio is built for rock, metal, punk, and anything
+            with attitude.
+          </p>
+
+          <div class="hero-pills">
+            <div class="pill">Full-band tracking</div>
+            <div class="pill">Heavy guitar tones</div>
+            <div class="pill">Live-feel drums</div>
+            <div class="pill">Mixing &amp; polish</div>
+          </div>
+
+          <div class="hero-cta-row">
+            <a href="#contact"><button class="btn-primary">Start a project</button></a>
+            <a href="#audio"><button class="btn-secondary">Hear audio samples</button></a>
+            <span class="cta-note">Booking evenings &amp; weekends • Flexible rates</span>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span class="muted">Live room snapshot</span>
+              <div class="hero-light"></div>
+            </div>
+            <div class="hero-meters">
+              <div>
+                <div class="meter-label">
+                  <span>Drums</span>
+                  <span>Hot</span>
+                </div>
+                <div class="meter-bar">
+                  <div class="meter-fill"></div>
+                </div>
+              </div>
+              <div>
+                <div class="meter-label">
+                  <span>Guitars</span>
+                  <span>Thick</span>
+                </div>
+                <div class="meter-bar">
+                  <div class="meter-fill alt"></div>
+                </div>
+              </div>
+              <div>
+                <div class="meter-label">
+                  <span>Vibe</span>
+                  <span>100%</span>
+                </div>
+                <div class="meter-bar">
+                  <div class="meter-fill subtle"></div>
+                </div>
+              </div>
+            </div>
+            <p class="hero-tag">
+              Capture the performance that actually sounds like your band —
+              not a stock preset. Perfect for local Austin acts who want pro
+              results without corporate-studio weirdness.
+            </p>
+          </div>
+
+          <div class="hero-photo">
+            <img src="images/Desk%20angle.jpg"
+                 alt="Emphatic Audio control room desk and monitors at an angle" />
+          </div>
+
+          <div class="hero-floater">
+            <span>Genres</span>
+            <span>Heavy rock • Metal • Punk • Alt • Doom • Hard-edged pop</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT STUDIO -->
+      <section class="section" id="about">
+        <h2 class="section-title">About Emphatic Audio</h2>
+        <p class="section-kicker">
+          Emphatic Audio is a home-based studio in Austin, Texas, built around
+          real instruments, real amps, and a workflow that understands what it’s
+          like to be in a band. No pressure, just good sounds and honest
+          feedback.
+        </p>
+
+        <div class="two-col">
+          <div>
+            <ul class="bullet-list">
+              <li>
+                Comfortable, relaxed space: track without the “big studio”
+                anxiety tax.
+              </li>
+              <li>
+                Engineer/producer who plays in working bands and understands
+                loud guitars, fast drums, and vocals that actually cut.
+              </li>
+              <li>
+                Flexible scheduling for real lives: day jobs, kids, gigs, and
+                weird work hours welcome.
+              </li>
+              <li>
+                Bring your own ideas, or get help with arrangements, tones,
+                and performance.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="card">
+              <h3>Who is this for?</h3>
+              <p>
+                Emphatic Audio is ideal for local bands who want a serious
+                recording without getting lost in a giant commercial facility.
+              </p>
+              <p class="muted">
+                <strong>Great fit for:</strong><br />
+                • Punk / metal / hard rock bands<br />
+                • DIY artists ready for a step up in sound<br />
+                • Bands who want to record live in a room and keep the energy
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ME -->
+      <section class="section" id="about-me">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-kicker">
+          I’m a guitar player, studio rat, and long-time member of the Austin
+          heavy music scene. If you’ve spent time in local clubs, there’s a
+          decent chance we’ve crossed paths.
+        </p>
+
+        <div class="two-col">
+          <div>
+            <div class="card">
+              <h3>Bands &amp; background</h3>
+              <p>
+                I’ve spent decades playing, writing, and recording in loud
+                bands — from classic heavy metal to punk, doom, and weird
+                rock. I’m not just hitting record; I understand what it takes
+                to actually play this stuff.
+              </p>
+              <p class="muted">
+                That experience feeds directly into how I track and mix:
+                helping with tones, performance, and keeping sessions focused
+                while still fun.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <h3>Video &amp; content</h3>
+              <p>
+                I also do video editing and basic production, especially for
+                music-related projects: performance clips, live session videos,
+                and short social-media-ready pieces that help bands get seen.
+              </p>
+              <p class="muted">
+                If you’re interested in adding simple video to your recording
+                session — even just a few good performance angles — mention it
+                when you reach out and we can talk options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <h2 class="section-title">Services</h2>
+        <p class="section-kicker">
+          Whether you need a full-length, a single, or a tight live demo to
+          book shows, Emphatic Audio can handle tracking, overdubs, editing,
+          and mix work.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-tag">Tracking</div>
+            <h3>Full-band &amp; overdub recording</h3>
+            <p>
+              Live-off-the-floor basics, then tighten with overdubs as needed.
+              Real amps, real drums, and a workflow that keeps sessions moving.
+            </p>
+            <ul class="bullet-list">
+              <li>Multi-mic drum recording</li>
+              <li>Dual-guitar setups &amp; reamping options</li>
+              <li>Vocal comping &amp; harmonies</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-tag">Mixing</div>
+            <h3>Mixing &amp; polish</h3>
+            <p>
+              Punchy, clear mixes that still feel like your band. No overcooked
+              radio gloss unless that’s what you want.
+            </p>
+            <ul class="bullet-list">
+              <li>Mix from Emphatic sessions or your own tracks</li>
+              <li>Drum enhancement / sample support</li>
+              <li>Revisions to get it sitting right</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-tag">Extras</div>
+            <h3>Extras &amp; add-ons</h3>
+            <p>
+              Need more than just audio? Ask about options for simple live
+              performance videos or social media ready clips.
+            </p>
+            <p class="muted">
+              Reach out with what you’re thinking and we’ll figure out what
+              makes sense.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="section" id="pricing">
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-kicker">
+          Simple, band-friendly rates. Pick a project-style option or pay straight time.
+          No surprises — you’ll know exactly what you’re spending.
+        </p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="card-tag">Tracking</div>
+            <h3>$200 / day</h3>
+            <p>
+              Recording sessions for full-band basics, overdubs, and getting solid takes
+              without feeling rushed.
+            </p>
+            <ul class="bullet-list">
+              <li>MP3 rough mixes included</li>
+              <li>Pay at end of each session day</li>
+              <li>Dropbox links for roughs</li>
+            </ul>
+            <p class="muted pricing-fineprint">
+              A “day” typically runs up to ~6 hours of tracking time.
+            </p>
+          </div>
+
+          <div class="pricing-card">
+            <div class="card-tag">Final Mix</div>
+            <h3>$60 / song</h3>
+            <p>
+              Final mixes I start on my own, off session. Later we'll work together on tweeks and revisions.
+            </p>
+            <ul class="bullet-list">
+              <li>Final stereo WAV + MP3</li>
+              <li>Delivered via Dropbox link</li>
+              <li>Reasonable revisions included</li>
+            </ul>
+            <p class="muted pricing-fineprint">
+              Major re-tracking or big arrangement changes may be billed hourly.
+            </p>
+          </div>
+
+          <div class="pricing-card pricing-card-alt">
+            <div class="card-tag">Hourly Option</div>
+            <h3>$30 / hour</h3>
+            <p>
+              Prefer to pay straight time? No problem — we punch in/out and you pay for exactly what we do.
+            </p>
+            <ul class="bullet-list">
+              <li>Punch-in / punch-out timer (Clockify)</li>
+              <li>Pay at end of each session day</li>
+              <li>Great for one-offs or unknown scope</li>
+            </ul>
+            <p class="muted pricing-fineprint">
+              Please tell us you want hourly before we start.
+            </p>
+          </div>
+        </div>
+
+        <div class="pricing-note card">
+          <h3>Payment</h3>
+          <p class="muted" style="margin-bottom: 0.4rem;">
+            We accept <strong>Venmo</strong> and <strong>cash</strong>.
+          </p>
+          <p class="muted">
+            Venmo: <strong>@Stuart-Laurence-2</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- GEAR -->
+      <section class="section" id="gear">
+        <h2 class="section-title">Selected Gear</h2>
+        <p class="section-kicker">
+          The exact list changes over time, but here’s the kind of rig you can
+          expect at Emphatic Audio. If you’re chasing something specific, just
+          ask.
+        </p>
+
+        <div class="gear-columns">
+          <div>
+            <h3>Recording Front-End</h3>
+            <ul>
+              <li>Multi-input audio interface</li>
+              <li>Individual headphone mixers for each player</li>
+              <li>Low-latency monitoring for live tracking</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill-small">Drum-friendly I/O</span>
+              <span class="pill-small">Headphone mixes</span>
+            </div>
+          </div>
+          <div>
+            <h3>Mics &amp; Amps</h3>
+            <ul>
+              <li>Dynamic &amp; condenser mic selection</li>
+              <li>Guitar heads &amp; cabs suited for heavy music</li>
+              <li>Bass DI &amp; amp options</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill-small">High-gain tones</span>
+              <span class="pill-small">Classic crunch</span>
+            </div>
+          </div>
+          <div>
+            <h3>In-the-Box Tools</h3>
+            <ul>
+              <li>Modern drum enhancement &amp; editing</li>
+              <li>Mix bus processing tailored for rock/metal</li>
+              <li>Vocal FX, delays, reverbs, and more</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill-small">Hybrid workflow</span>
+              <span class="pill-small">Recallable mixes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUDIO SAMPLES -->
+      <section class="section" id="audio">
+        <h2 class="section-title">Audio Samples</h2>
+        <p class="section-kicker">
+          One song each from some of the bands I’ve worked with over the years — a cross-section of
+          styles, eras, and energy that shaped Emphatic Audio.
+        </p>
+
+        <div class="audio-grid">
+          <!-- 01 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Atomic Tigers</div>
+              <div class="audio-style">Pop Punk</div>
+            </div>
+            <div class="audio-song">"Ready for Action"</div>
+            <audio controls preload="none">
+              <source src="audio/Atomic_Tigers_Ready_for_Action.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 02 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Bulemics</div>
+              <div class="audio-style">Punk ’n’ Roll</div>
+            </div>
+            <div class="audio-song">"Felicia"</div>
+            <audio controls preload="none">
+              <source src="audio/Bulemics_Felacia.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 03 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Meat Hook and the Vital Organs</div>
+              <div class="audio-style">Shock Punk</div>
+            </div>
+            <div class="audio-song">"Hard Time for Rock and Roll"</div>
+            <audio controls preload="none">
+              <source src="audio/MeatHookNVitalOrgans_HardTimeRockNRoll.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 04 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Omega Wolf</div>
+              <div class="audio-style">Thrash Metal</div>
+            </div>
+            <div class="audio-song">"Darkness and Light"</div>
+            <audio controls preload="none">
+              <source src="audio/Omega_Wolf_DarknessandLight.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 05 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Rebel Flesh</div>
+              <div class="audio-style">Horror Rock</div>
+            </div>
+            <div class="audio-song">"Shadows"</div>
+            <audio controls preload="none">
+              <source src="audio/Rebel_Flesh_051317_Shadows.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 06 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Screw Missile</div>
+              <div class="audio-style">Metalcore</div>
+            </div>
+            <div class="audio-song">"Faces"</div>
+            <audio controls preload="none">
+              <source src="audio/Screw_Missle_Faces.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 07 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Texas Don and the Toxic City Psychos</div>
+              <div class="audio-style">Sludge Rock</div>
+            </div>
+            <div class="audio-song">"Fashion Show"</div>
+            <audio controls preload="none">
+              <source src="audio/TexasDonandtheToxicCityPsychos_FasionShow.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 08 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Texas Metal Outlaws</div>
+              <div class="audio-style">Heavy Metal</div>
+            </div>
+            <div class="audio-song">"Texas Metal Outlaws"</div>
+            <audio controls preload="none">
+              <source src="audio/TexasMetalOutlaws.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 09 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Zero Percent</div>
+              <div class="audio-style">Hardcore Punk</div>
+            </div>
+            <div class="audio-song">"Rape Factory"</div>
+            <audio controls preload="none">
+              <source src="audio/Zero_Percent_Rape_Factory.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 10 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">El Pathos</div>
+              <div class="audio-style">New Insincerity</div>
+            </div>
+            <div class="audio-song">"Blood of Mine"</div>
+            <audio controls preload="none">
+              <source src="audio/ElPathos_BloodofMine.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 11 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Flash Boys</div>
+              <div class="audio-style">Rock Punk</div>
+            </div>
+            <div class="audio-song">"Dead at the Bus Stop"</div>
+            <audio controls preload="none">
+              <source src="audio/FlashBoys_DeadAtTheBusStop.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 12 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">Las Cruses</div>
+              <div class="audio-style">Doom Metal</div>
+            </div>
+            <div class="audio-song">"Cocaine Wizard Woman"</div>
+            <audio controls preload="none">
+              <source src="audio/LasCruses_CocainWizardWoman.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <!-- 13 -->
+          <div class="audio-card">
+            <div class="audio-head">
+              <div class="audio-band">IGNITOR</div>
+              <div class="audio-style">Heavy Metal</div>
+            </div>
+            <div class="audio-song">"Countess Apollyon"</div>
+            <audio controls preload="none">
+              <source src="audio/IGNITOR_CountessApollyon.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top: 1.2rem;">
+          These samples represent different eras, different bands, and different
+          approaches — but all recorded, mixed, or produced by Emphatic Audio.
+        </p>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="section" id="gallery">
+        <h2 class="section-title">Studio Gallery</h2>
+        <p class="section-kicker">
+          A look inside Emphatic Audio — the control room, live room, iso booths,
+          and some of the toys you’ll be using when you track here.
+        </p>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="images/Desk%20Straight.jpg"
+                 alt="Front view of the Emphatic Audio control room with Pro Tools session">
+            <figcaption>Control room &amp; mix position.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Couch.jpg"
+                 alt="Listening couch with guitars and posters on the wall">
+            <figcaption>Hangout couch &amp; guitars in the control room.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Guitar%20Wall.jpg"
+                 alt="Wall-mounted guitar collection at Emphatic Audio">
+            <figcaption>Wall of guitars ready for sessions.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Miced%20Drums%20and%20Room.jpg"
+                 alt="Drum kit fully mic'd up in the live room">
+            <figcaption>Live room drum kit fully mic’d and ready.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Mics%20and%20Headphone%20Mixers%20close.jpg"
+                 alt="Headphone mixers and mics set up for a full band tracking session">
+            <figcaption>Headphone mixers for full-band tracking.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Iso%20A.jpg"
+                 alt="Inside one of the iso rooms with acoustic treatment">
+            <figcaption>Iso Room A for amps or vocals.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Iso%20B.jpg"
+                 alt="Second iso room with acoustic treatment">
+            <figcaption>Iso Room B for guitars, bass, or extra cabs.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Iso%20wall.jpg"
+                 alt="View of multiple iso room doors in the live room">
+            <figcaption>Iso rooms lining the live room wall.</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/Vocal%20Booth.jpg"
+                 alt="Vocal booth seen through the control room window">
+            <figcaption>Dedicated vocal booth with sightline to control room.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <h2 class="section-title">Booking &amp; Contact</h2>
+        <p class="section-kicker">
+          Tell me about your band, what you want to record, and your timeline.
+          You don’t need a perfect plan — just a rough idea of songs and goals.
+        </p>
+
+        <div class="contact-grid">
+          <div>
+            <div class="contact-card">
+              <div class="contact-row">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                  <a href="mailto:contact.emphaticaudio@gmail.com">
+                    contact.emphaticaudio@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Austin, TX (North / Central area)</div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">Typical Availability</div>
+                <div class="contact-value">
+                  Evenings, weekends, and flexible scheduling for full-day
+                  sessions.
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">What to include</div>
+                <div class="contact-value">
+                  <ul class="bullet-list">
+                    <li>Band name &amp; style</li>
+                    <li>Number of songs &amp; rough length</li>
+                    <li>Band instrumentation (who plays what)</li>
+                    <li>Reference bands / records you like</li>
+                    <li>Any deadlines (shows, releases, etc.)</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="muted">
+                Rates are project-based and fair. DIY-friendly budgets welcome
+                — the goal is to get your music out of the practice room and
+                into speakers.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size: 0.98rem; margin-bottom: 0.4rem">
+              Social &amp; Links
+            </h3>
+            <p class="muted">
+              You can also reach out or follow along on social. Right now,
+              Facebook is the easiest way to connect.
+            </p>
+            <div class="social-row">
+              <a
+                class="social-pill"
+                href="https://www.facebook.com/YOUR_EMPHATIC_AUDIO_PAGE_URL_HERE"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
+              </a>
+            </div>
+            <p class="muted" style="margin-top: 1rem;">
+              Want to tour the space or talk through a project idea before
+              booking? Email with "Studio Tour" in the subject line and we’ll
+              set something up.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Emphatic Audio • Austin, TX</span>
+        <span>Recording • Mixing • Loud Bands Welcome</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Set year in footer
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Simple mobile nav toggle
+    const burger = document.querySelector(".nav-burger");
+    const links = document.querySelector(".nav-links");
+    if (burger && links) {
+      burger.addEventListener("click", () => {
+        const isVisible = links.style.display === "flex";
+        if (isVisible) {
+          links.style.display = "none";
+        } else {
+          links.style.display = "flex";
+          links.style.flexDirection = "column";
+          links.style.alignItems = "flex-end";
+          links.style.background =
+            "linear-gradient(to bottom, rgba(5,5,9,0.97), rgba(5,5,9,0.96))";
+          links.style.position = "absolute";
+          links.style.right = "1.25rem";
+          links.style.top = "3.1rem";
+          links.style.padding = "0.7rem 0.9rem 0.8rem";
+          links.style.borderRadius = "12px";
+          links.style.border = "1px solid rgba(255,255,255,0.06)";
+          links.style.boxShadow = "0 18px 36px rgba(0,0,0,0.7)";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
